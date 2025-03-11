@@ -1,8 +1,9 @@
 import CustomError from "./customError"
 import { StatusType, BaseResponse } from "../interface/response.interface"
 
-const formatResponse = <T>(status: StatusType, message: string, data: T | [] = []): BaseResponse<T> => {
+const formatResponse = <T>(code: number, status: StatusType, message: string, data: T | [] = []): BaseResponse<T> => {
     return {
+      code,
       status,
       message,
       data,
